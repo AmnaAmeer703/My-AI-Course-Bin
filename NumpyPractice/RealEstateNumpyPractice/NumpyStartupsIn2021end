@@ -1,0 +1,135 @@
+import numpy as np
+
+ID, Company, Valuation ,DateJoined, Country, City, Industry, Select_Investors = np.genfromtxt("NumpyPractice\Startups in 2021 end.csv", delimiter=",", usecols=(0,1,2,3,4,5,6,7), unpack=True, dtype = None, skip_header=1)
+
+print(Company)
+print(Valuation)
+print(DateJoined)
+print(Country)
+print(City)
+print(Industry)
+print(Select_Investors)
+
+Valuation = np.char.replace(Valuation, '$', '')
+Valuation = Valuation.astype(float)
+print(Valuation)
+
+print("Valuation mean: " , np.mean(Valuation))
+print("Valuation average: " , np.average(Valuation))
+print("Valuation std: " , np.std(Valuation))
+print("Valuation median: " , np.median(Valuation))
+print("Valuation percentile - 25: " , np.percentile(Valuation,25))
+print("Valuation  - 75: " , np.percentile(Valuation,75))
+print("Valuation percentile  - 3: " , np.percentile(Valuation,3))
+print("Valuation min : " , np.min(Valuation))
+print("Valuation max : " , np.max(Valuation))
+
+print("Valuation square: " , np.square(Valuation))
+print("Valuation sqrt: " , np.sqrt(Valuation))
+print("Valuation pow: " , np.power(Valuation,Valuation))
+print("Valuation abs: " , np.abs(Valuation))
+
+
+Valuation_Pie = (Valuation/np.pi) +1
+# Calculate sine, cosine, and tangent
+sine_values = np.sin(Valuation_Pie)
+cosine_values = np.cos(Valuation_Pie)
+tangent_values = np.tan(Valuation_Pie)
+
+print("US Startups Valuation - div - pie  - Sine values:", sine_values)
+print("US Startups Valuation - div - pie Cosine values:", cosine_values)
+print("US Startups Valuation - div - pie Tangent values:", tangent_values)
+
+print("US Startups Valuation - div - pie  - Exponential values:", np.exp(Valuation_Pie))
+
+
+log_array = np.log(Valuation_Pie)
+log10_array = np.log10(Valuation_Pie)
+
+print("US Startups Valuation - div - pie  - Natural logarithm values:", log_array)
+print("US Startups Valuation - div - pie  = Base-10 logarithm values:", log10_array)
+
+#Example: Hyperbolic Sine
+# Calculate the hyperbolic sine of each element
+sinh_values = np.sinh(Valuation_Pie)
+print("US Startups Valuation - div - pie   - Hyperbolic Sine values:", sinh_values)
+
+
+#Hyperbolic Cosine Using cosh() Function
+# Calculate the hyperbolic cosine of each element
+cosh_values = np.cosh(Valuation_Pie)
+print("US Startups Valuation - div - pie   - Hyperbolic Cosine values:", cosh_values)
+
+
+tanh_values = np.tanh(Valuation_Pie)
+print("US Startups Valuation - div - pie   -Hyperbolic Tangent values:", tanh_values)
+
+#Example: Inverse Hyperbolic Sine
+
+# Calculate the inverse hyperbolic sine of each element
+asinh_values = np.arcsinh(Valuation_Pie)
+print("US Startups Valuation - div - pie   -Inverse Hyperbolic Sine values:", asinh_values)
+
+#Example: Inverse Hyperbolic Cosine
+# Calculate the inverse hyperbolic cosine of each element
+acosh_values = np.arccosh(Valuation_Pie)
+print("US Startups Valuation - div - pie   -Inverse Hyperbolic Cosine values:", acosh_values)
+
+D2 = np.array([Valuation])
+print(D2)
+
+print ("US Startups Valuation - 2 dimentional arrary - " ,D2)
+
+# check the dimension of array1
+print("US Startups Valuation - 2 dimentional arrary - dimension" , D2.ndim) 
+# Output: 2
+
+# return total number of elements in array1
+print("US Startups Valuation - 2 dimentional arrary - total number of elements" ,D2.size)
+# Output: 400
+
+# return a tuple that gives size of array in each dimension
+print("US Startups Valuation - 2 dimentional arrary - gives size of array in each dimension" ,D2.shape)
+
+print("US Startups Valuation - 2 dimentional arrary - data type" ,D2.dtype)
+
+# Splicing array
+D2Valuation_IndustrySlice=  D2[:1,:5]
+print("US Startups Valuation and Industry - 2 dimentional arrary - Splicing array - D2[:1,:5] " , D2Valuation_IndustrySlice)
+D2Valuation_IndustrySlice2=  D2[:1, 4:15:4]
+print("US Startups Valuation and Industry - 2 dimentional arrary - Splicing array - D2[:1, 4:15:4] " , D2Valuation_IndustrySlice2)
+
+
+
+
+# Indexing array
+D2Valuation_IndustrySliceItemOnly=  D2Valuation_IndustrySlice[0,1]
+print("US Startups Valuation Plus Industry - 2 dimentional arrary - Index array - D2ValuationIndustrySlice[1,5] " , D2Valuation_IndustrySliceItemOnly)
+D2Valuation_IndustrySlice2ItemOnly=  D2Valuation_IndustrySlice2[0, 2]
+print("US Startups Valuation Plus Indusrty  - 2 dimentional arrary - index array - D2ValuationIndustry2[0, 2] " , D2Valuation_IndustrySlice2ItemOnly)
+
+
+
+for elem in np.nditer(D2):
+    print(elem)
+
+for index, elem in np.ndenumerate(D2):
+    print(index, elem)
+
+
+
+D2Reshape = np.reshape(D2, (1, 400))
+print("US Startups Valuation and Industry - 2 dimentional arrary - np.reshape(D2, (1, 400)) : " , D2Reshape)
+print("US Startups Valuation and Industry - 2 dimentional arrary - np.reshape(D2, (1, 400)) : Size " , D2Reshape.size)
+print("US Startups Valuation and Industry - 2 dimentional arrary - np.reshape(D2, (1, 400)) : ndim " , D2Reshape.ndim)
+print("US Startups Valuation and Industry - 2 dimentional arrary - np.reshape(D2, (1, 400)) : shape " , D2Reshape.shape)
+print("US Startups Valuation and Industry - 2 dimentional arrary - np.reshape(D2, (1, 400)) : ndim " , D2Reshape.ndim)
+
+
+
+
+print()
+
+
+
+
