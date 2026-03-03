@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>UBER AND LYFT FARE PREDICTOR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        form {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            box-sizing: border-box;
+        }
+        div {
+            margin-bottom: 15px;
+        }
+        label {
+            margin-bottom: 5px;
+            display: block;
+            color: #666;
+            font-weight: bold;
+        }
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin: 4px 0;
+            box-sizing: border-box;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 4px 0;
+            box-sizing: border-box;
+            border-radius: 6px;
+            border: 1px solid #ddd;
+            font-size: 14px;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>UBER AND LYFT FARE PREDICTOR</h2>
+        <form action="/predict" method="POST">
+            <div>
+                <label for="distance">distance:</label>
+                <input type="number" id="distance" name="distance" step="0.2" required>
+            </div>
+            <div>
+                <label for="cab_type">category_name:</label>
+                <select id="cab_type" name="cab_type">
+                    <option value="Uber">Uber</option>
+                    <option value="Lyft">Lyft</option>
+                </select>
+            </div>
+            <div>
+                <label for="'destination">destination:</label>
+                <select id="destination" name="destination">
+                    <option value="Financial District">Financial District</option>
+                    <option value="Black Bay">Black Bay:</option>
+                    <option value="Theatre District">Theatre District</option>
+                    <option value="Haymarket Square">Haymarket Square</option>
+                    <option value="Boston University">Boston University</option>
+                    <option value="Fenway">Fenway</option>
+                    <option value="Northeastern University">'Northeastern University</option>
+                    <option value="North End">North End</option>
+                    <option value="South Station">South Station</option>
+                    <option value="North Station">North Station</option>
+                    <option value="West End">West End</option>
+                    <option value="Beacon Hill">Beacon Hill</option>
+                </select>
+            </div>
+            <div>
+                <label for="source">source:</label>
+                <select id="source" name="source">
+                    <option value="Financial District">Financial District</option>
+                    <option value="Black Bay">Black Bay:</option>
+                    <option value="Theatre District">Theatre District</option>
+                    <option value="Haymarket Square">Haymarket Square</option>
+                    <option value="Boston University">Boston University</option>
+                    <option value="Fenway">Fenway</option>
+                    <option value="Northeastern University">'Northeastern University</option>
+                    <option value="North End">North End</option>
+                    <option value="South Station">South Station</option>
+                    <option value="North Station">North Station</option>
+                    <option value="West End">West End</option>
+                    <option value="Beacon Hill">Beacon Hill</option>
+                </select>
+            </div>
+            <div>
+                <label for="surge_multiplier">surge_multiplier:</label>
+                <input type="number" id="surge_multiplier" name="surge_multiplier" required>
+            </div>
+            <div>
+                <label for="name">name:</label>
+                <select id="name" name="name">
+                    <option value="Shared">Shared</option>
+                    <option value="Lux">Lux</option>
+                    <option value="Lyft">Lyft</option>
+                    <option value="Lux Black XL">Lux Black XL</option>
+                    <option value="Lyft XL">Lyft XL</option>
+                    <option value="Lux Black">Lux Black</option>
+                    <option value="Uber XL">Uber XL</option>
+                    <option value="Black">Black</option>
+                    <option value="Uber X">Uber X</option>
+                    <option value="WAV">WAV</option>
+                    <option value="Black SUV">Black SUV</option>
+                    <option value="UberPool">UberPool</option>
+                </select>
+            </div>
+            <div>
+                <label for="Period_Of_Time">Period_Of_Time:</label>
+                <select id="Period_Of_Time" name="Period_Of_Time">
+                    <option value="Early Morning">Early Morning</option>
+                    <option value="Morning">Morning</option>
+                    <option value="Noon">Noon</option>
+                    <option value="Evening">Evening</option>
+                    <option value="Night">Night</option>
+                    <option value="Late Night">Late Night</option>
+                </select>
+            </div>
+            <div>
+            <button type="submit">predict</button>
+        </form>
+    </div>
+</body>
+</html>
