@@ -1,0 +1,26 @@
+columns:
+  - distance: int
+  - cab_type: category
+  - destination: category
+  - source: category
+  - surge_multiplier: int
+  - name: catgeory
+  - Period_Of_Time: category
+
+
+numerical_columns:
+  - distance
+  - surge_multiplier
+
+categorical_columns:
+  - cab_type
+  - destination
+  - source
+  = name
+  - Period_Of_Time
+
+
+# for data transformation
+num_features:
+  - distance
+  - surge_multiplier
