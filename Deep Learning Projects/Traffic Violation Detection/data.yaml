@@ -1,0 +1,27 @@
+names:
+- person
+- car
+- truck
+- bus
+- motorcycle
+- red light
+- green light
+- stop sign
+- no entry
+- no overtaking
+- no left turn
+- no right turn
+- no u-turn
+- no stopping
+- speed limit 20
+- speed limit 30
+- speed limit 40
+- speed limit 50
+- speed limit 60
+- speed limit 70
+- speed limit 80
+- speed limit 100
+- speed limit 120
+nc: 23
+train: archive/images/train
+val: archive/images/val
