@@ -1,0 +1,16 @@
+path: archive/css-data
+train: train/images
+test: test/images
+val: valid/images
+nc: 10
+names:
+- Hardhat
+- Mask
+- NO-Hardhat
+- NO-Mask
+- NO-Safety Vest
+- Person
+- Safety Cone
+- Safety Vest
+- machinery
+- vehicle

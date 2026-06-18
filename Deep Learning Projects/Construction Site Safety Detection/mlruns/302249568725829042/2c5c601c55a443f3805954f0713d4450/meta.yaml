@@ -1,0 +1,14 @@
+artifact_uri: file:C:/Users/My PC/Documents/Construction Site Safety Detection/mlruns/302249568725829042/2c5c601c55a443f3805954f0713d4450/artifacts
+end_time: null
+entry_point_name: ''
+experiment_id: '302249568725829042'
+lifecycle_stage: active
+run_id: 2c5c601c55a443f3805954f0713d4450
+run_name: YOLO11_Construction_Safety
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1781784501432
+status: 1
+tags: []
+user_id: My PC
